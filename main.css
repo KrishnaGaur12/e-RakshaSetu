@@ -127,7 +127,7 @@ section.why-pro {
 }
 
 section.why-pro h2 {
-  color: #333333;
+  color: #000000;
 }
 
 section.clients {
@@ -150,7 +150,7 @@ footer {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 79px;
   letter-spacing: -4px;
   font-weight: 500;
   line-height: 100%;
@@ -160,7 +160,7 @@ h1 {
 
 h2 {
   letter-spacing: -2px;
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 500;
   line-height: 100%;
   font-family: "Chillax-Medium", sans-serif;
@@ -226,7 +226,7 @@ button a {
 button:hover {
   background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-light));
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 150, 199, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 img {
