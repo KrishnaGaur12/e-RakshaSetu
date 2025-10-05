@@ -22,7 +22,7 @@ body {
   position: fixed;
   top: 1em;
   width: 45%;
-  height: 55px;
+  height: 50px;
   padding: 0 1em;
   color: var(--color-text-primary);
   z-index: 100000;
@@ -61,7 +61,7 @@ body {
   cursor: pointer;
   color: var(--color-text-primary);
   font-size: 24px;
-  line-height: 55px;
+  line-height: 48px;
 }
 
 .hamburger-icon i {
@@ -85,7 +85,7 @@ body {
 }
 
 .navbar-logo img {
-  height: 60px;
+  height: 45px;
   width: auto;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .navbar-items ul li {
-  line-height: 55px;
+  line-height: 48px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -107,7 +107,7 @@ body {
 }
 
 .navbar-items .btn {
-  line-height: 55px;
+  line-height: 48px;
   margin-left: 1em;
 }
 
@@ -142,9 +142,9 @@ body {
     justify-content: flex-start;
     position: fixed;
     width: 100%;
-    height: calc(100vh - 51px);
-    padding-top: 55px;
-    top: 55px;
+    height: calc(100vh - 48px);
+    padding-top: 48px;
+    top: 48px;
     left: 100%;
     border-top: 1px solid var(--color-border);
     background: rgba(255, 255, 255, 0.95);
@@ -172,7 +172,7 @@ body {
   }
 
   .navbar-items .btn {
-    line-height: 55px;
+    line-height: 48px;
     margin-left: 0px;
     margin-top: 30px;
   }
