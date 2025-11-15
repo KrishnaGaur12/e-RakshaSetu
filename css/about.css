@@ -59,6 +59,7 @@
 .a-l-logo img {
   width: 100px;
   object-fit: contain;
+  filter: brightness(0.3) contrast(1.2);
 }
 
 .a-l-logo:nth-child(1),
@@ -69,7 +70,7 @@
 .about-quote p {
   margin-top: 3em;
   font-size: 24px;
-  color: #fff;
+  color: #000000;
 }
 
 @media (max-width: 900px) {

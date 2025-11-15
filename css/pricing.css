@@ -19,22 +19,48 @@
   height: 600px;
   flex: 1;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 150, 199, 0.3);
   padding: 2em;
   border-radius: 2em;
   display: flex;
   gap: 1em;
-  background-image: linear-gradient(314deg, #1a1d32, rgba(26, 29, 50, 0));
+  background: linear-gradient(135deg, rgba(162, 210, 255, 0.1) 0%, rgba(16, 55, 131, 0.05) 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardSlideIn 0.6s ease-out;
+}
+
+.p-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 150, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border-color: rgba(0, 150, 199, 0.6);
+  background: linear-gradient(135deg, rgba(162, 210, 255, 0.2) 0%, rgba(16, 55, 131, 0.08) 100%);
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .p-card#p-main {
   position: relative;
-  background-image: linear-gradient(
-    314deg,
-    rgba(252, 255, 102, 0.2),
-    rgba(252, 255, 102, 0)
-  ) !important;
+  background: linear-gradient(135deg, rgba(0, 150, 199, 0.15) 0%, rgba(162, 210, 255, 0.1) 100%) !important;
   background-clip: padding-box;
+  box-shadow: 0 16px 48px rgba(0, 150, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: cardSlideIn 0.6s ease-out 0.2s both;
+  border: 2px solid rgba(0, 150, 199, 0.4);
+}
+
+.p-card#p-main:hover {
+  box-shadow: 0 24px 64px rgba(0, 150, 199, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(0, 150, 199, 0.2) 0%, rgba(162, 210, 255, 0.15) 100%) !important;
+  border-color: rgba(0, 150, 199, 0.7);
 }
 
 .p-tag {
@@ -42,11 +68,19 @@
   right: 0;
   top: 0;
   margin: 1.5em;
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(252, 255, 102, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px 3px 12px;
+  color: #0096c7;
+  border: 2px solid rgba(0, 150, 199, 0.6);
+  background: linear-gradient(135deg, rgba(162, 210, 255, 0.3), rgba(224, 242, 254, 0.5));
+  padding: 6px 16px 5px 16px;
   border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 150, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  animation: tagPulse 2s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes tagPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0, 150, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 6px 20px rgba(0, 150, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
 }
 
 .p-tag p {
@@ -54,17 +88,21 @@
 }
 
 .p-card#p-main i {
-  color: #fcff66;
+  color: #0096c7;
 }
 
 .p-card#p-main button {
-  background: #fcff66;
-  color: #000;
+  background: #0096c7;
+  color: #fff;
 }
 
 .p-card h3 {
   font-size: 22px;
   margin-bottom: 1.5em;
+  background: linear-gradient(135deg, #a2d2ff, #0096c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 p.price {
@@ -73,7 +111,10 @@ p.price {
 
 p.price span {
   font-size: 40px;
-  color: #fff;
+  background: linear-gradient(135deg, #0096c7, #103783);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 span.dl {
@@ -99,60 +140,168 @@ span.dl {
   align-items: center;
   gap: 0.65em;
   padding: 0.55em 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 150, 199, 0.2);
 }
 
 .p-card-info p i {
-  color: rgb(57, 181, 234);
+  color: #0096c7;
   font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.p-card:hover .p-card-info p i {
+  color: #103783;
+  transform: scale(1.1);
 }
 
 .p-card button {
-  background: #fff;
+  background: linear-gradient(135deg, #0096c7, #103783);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 150, 199, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.p-card button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.p-card button:hover::before {
+  left: 100%;
+}
+
+.p-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 150, 199, 0.35);
 }
 
 .accordion {
-  padding: 1.5em;
-  cursor: pointer;
   width: 100%;
+  background: transparent;
   border: none;
   text-align: left;
-  outline: none;
-  font-size: 18px;
-  font-weight: 400;
-  transition: 0.4s;
+  padding: 1.25em 1.5em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
   font-family: "Inter";
+  color: #103783;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  border-radius: 15px 15px 0 0;
+}
+
+.accordion:hover {
+  color: #0096c7;
+  background: rgba(0, 150, 199, 0.05);
+  padding-left: 1.8em;
+}
+
+.accordion::after {
+  content: '▶';
+  transition: transform 0.3s ease;
+}
+
+.accordion.active::after {
+  transform: rotate(90deg);
 }
 
 .panel {
   padding: 0 1.5em;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+}
+
+@keyframes panelOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .panel p {
-  padding-bottom: 1.5em;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1.5em 0;
+  margin: 0;
 }
 
 .faq .container {
-  padding: 2em 6em 4em 6em;
+  padding: 4em 6em;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .faq h2 {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  font-size: 2.5rem;
 }
 
 .faq button {
   background: none;
-  color: #fff;
+  color: #000000;
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .faq-item {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.1);
-  margin: 1em 0;
-  border-radius: 20px;
+  border: 1px solid rgba(0, 150, 199, 0.3);
+  background: linear-gradient(135deg, rgba(162, 210, 255, 0.08), rgba(224, 242, 254, 0.06));
+  margin: 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 150, 199, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 150, 199, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 150, 199, 0.6);
+  box-shadow: 0 8px 28px rgba(0, 150, 199, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(162, 210, 255, 0.15), rgba(224, 242, 254, 0.12));
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 900px) {
